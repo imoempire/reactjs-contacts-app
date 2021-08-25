@@ -8,7 +8,7 @@ class ContactForm extends Component {
                 {
                     Name: '',
                     Phone: '',
-                    Location: ''
+                    Location: '',
                 }
             ]
         }
@@ -16,14 +16,14 @@ class ContactForm extends Component {
     handleChange=(e)=>{
         this.setState({ [e.target.name] : e.target.value })
     };
-    
+
     handleSubmit=(e)=>{
         e.preventDefault();
         this.props.addContact(this.state);
         this.setState({
             Name: '',
             Phone: '',
-            Location: ''
+            Location: '',
         })
     }
     render() {
@@ -39,7 +39,7 @@ class ContactForm extends Component {
          </div>
          <div className="form-control">
          <input type="number" name="Phone" htmlFor="Phone"
-         placeholder="Phone"  max="12"
+         placeholder="Phone" 
          onChange={this.handleChange} 
          value={this.state.Phone} 
          />
@@ -47,7 +47,7 @@ class ContactForm extends Component {
          <div className="form-control">
          <input type="text" name="Location" htmlFor="Location" 
          placeholder="Location" 
-         onChange={this.handleChange} value={this.stateLocation} 
+         onChange={this.handleChange} value={this.state.Location} 
          />
          </div>
          <div className="form-control">

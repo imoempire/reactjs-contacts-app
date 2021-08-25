@@ -1,12 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import Card from "react-bootstrap/Card";
+import Modal from 'react-bootstrap/esm/Modal';
+import ListGroup from "react-bootstrap/ListGroup";
+import EditContactForm from './EditContactForm';
 
-const Contact = ({contacts, index}) => {
+const Contact = ( {contacts, deleteContact, editContact } ) => {
+    const [show, setShow]= useState(false);
+    const handleClose =()=> setShow(false);
+    const handleShow = ()=> setShow(true);
+    const deletehandle =(e)=>{
+        deleteContact(contacts.id)
+    }
     return (
-        <div className="contact" key={index}> 
-          <h3>Name: {contacts.Name}</h3>
-          <h3>Phone: {contacts.Phone}</h3>
-          <h3>Location: {contacts.Location}</h3>
-          </div>
+        <>
+        <Card className="contact"> 
+          <Card.Header>Name: {contacts.Name}</Card.Header>
+          <ListGroup variant="flush">
+
+          <ListGroup.Item>Phone: {contacts.Phone}</ListGroup.Item>
+          <ListGroup.Item>Location: {contacts.Location}</ListGroup.Item>
+
+          </ListGroup>
+          <Button onClick={deletehandle}>Delete</Button>
+          <Button onClick={handleShow}>Edit</Button>
+
+          </Card>
+        
+          <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                  <Modal.Title>Edit Contact</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+              <EditContactForm 
+              contacts={contacts}
+              editContact={editContact}
+              closeModal={handleClose}
+              />
+              </Modal.Body>
+          </Modal>
+
+        </>
     );
 }
 
