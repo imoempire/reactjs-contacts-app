@@ -1,0 +1,58 @@
+
+.App {
+  text-align: center;
+}
+
+body {
+  /* background: linear-gradient(
+    90deg,
+    rgb(5, 30, 114) 0%,
+    rgb(19, 29, 1) 100%
+  ); */
+  background: url('./image/573563.jpg');
+  margin: 10%;
+}
+/* form{
+  text-align: center;
+  border: 1px solid black;
+  
+} */
+.contact:nth-child(2n + 1) {
+  background: linear-gradient(
+    70deg,
+    rgb(252, 40, 2) 10%,
+    rgb(7, 245, 58) 100%
+  );
+}
+
+.contact:nth-child(2n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgb(252, 40, 3) 10%,
+    rgba(250, 0, 135, 1) 100%
+  );
+}
+
+.contact:nth-child(2n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 10%,
+    rgb(7, 245, 58) 100%
+  );
+}
+.conatct{
+  padding-left: 20px;
+  border-radius: 8px;
+}
+.input{
+  margin-bottom: 1rem;
+  width: 10rem;
+}
+
+h1 {
+  position: relative;
+  background-color: rgba(0, 0, 0, 1);
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  font-size: 1.8em;
+  border-radius: 5px;}
