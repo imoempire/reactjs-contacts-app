@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { editContact } from '../Action/ContactsActions'
 
 class EditContactForm extends Component {
     constructor(props){
@@ -65,4 +67,9 @@ class EditContactForm extends Component {
     }
 }
 
-export default EditContactForm;
+const mapDispatchToProps={
+    editContact: editContact,
+}
+
+export default connect(null, mapDispatchToProps)(EditContactForm);
+ 
