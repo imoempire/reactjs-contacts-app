@@ -43,7 +43,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-3">
-              <ContactForm addContact={this.handleAdd} />
+              <ContactForm />
             </div>
             <div className="col">
               <h1>All Contacts</h1>
