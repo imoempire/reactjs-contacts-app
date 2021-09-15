@@ -4,19 +4,19 @@ import ContactForm from "./Components/ContactForm";
 import ContactsList from "./Components/ContactsList";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      contacts: [
-        {
-          Name: "James",
-          Phone: "0244945255",
-          Location: "Accra",
-          id: "5367r8trgnjb",
-        },
-      ],
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     contacts: [
+  //       {
+  //         Name: "James",
+  //         Phone: "0244945255",
+  //         Location: "Accra",
+  //         id: "5367r8trgnjb",
+  //       },
+  //     ],
+  //   };
+  // }
   handleAdd = (newContact) => {
     newContact.id = Math.random().toString();
     this.setState({
@@ -43,13 +43,11 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-3">
-              <ContactForm addContact={this.handleAdd} />
+              <ContactForm />
             </div>
             <div className="col">
               <h1>All Contacts</h1>
-              <ContactsList contacts={this.state.contacts} 
-              deleteContact={this.handleDelete}
-              editContact={this.handleEdit}/>
+              <ContactsList />
             </div>
           </div>
         </div>

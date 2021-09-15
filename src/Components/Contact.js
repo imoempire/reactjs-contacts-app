@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import Card from "react-bootstrap/Card";
 import Modal from 'react-bootstrap/esm/Modal';
 import ListGroup from "react-bootstrap/ListGroup";
+import { connect } from 'react-redux';
+import { deleteContact } from '../Action/ContactsActions';
 import EditContactForm from './EditContactForm';
 
 const Contact = ( {contacts, deleteContact, editContact } ) => {
@@ -44,4 +46,8 @@ const Contact = ( {contacts, deleteContact, editContact } ) => {
     );
 }
 
-export default Contact;
+
+const mapDispatchToProps={
+    deleteContact : deleteContact
+}
+export default connect(null, mapDispatchToProps)(Contact);
