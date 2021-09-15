@@ -9,7 +9,7 @@ import { firestore } from 'firebase';
 const store=createStore(contactsReducer, compose(
     applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
     reactReduxFirebase(firebase),
-    reduxFirestore(firestore)
+    reduxFirestore(firebase)
 ))
 
 export default store;

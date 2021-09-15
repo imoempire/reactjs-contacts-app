@@ -5,10 +5,19 @@ export const EDIT_CONTACT = "EDIT_CONTACT"
 
 export const addContact = (contact)=>{
     contact.id = Math.random().toString();
-    return{
-        type: ADD_CONTACT,
-        payload: contact
+    return(dispatch, state, {getFirestore})=>{
+        getFirestore()
+        .collection('Contacts')
+        .add(contact).then((docs)=>{
+            console.log(docs)
+        });
     }
+
+
+    // return{
+    //     type: ADD_CONTACT,
+    //     payload: contact
+    // }
 };
 export const deleteContact = (contactId)=>{
     return{
