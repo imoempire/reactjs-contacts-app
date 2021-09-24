@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContact } from '../Action/ContactsActions';
+import { addContact, getAllContacts } from '../Action/ContactsActions';
 
 class ContactForm extends Component {
     constructor(props){
@@ -27,6 +27,9 @@ class ContactForm extends Component {
             Phone: '',
             Location: '',
         })
+    }
+    componentDidMount(){
+        this.props.getAllContacts()
     }
     render() {
         return (
@@ -63,7 +66,8 @@ class ContactForm extends Component {
 
 
 const mapDispatch={
-    addContact: addContact 
+    addContact: addContact,
+    getAllContacts: getAllContacts 
 }
 
 export default connect(null, mapDispatch)(ContactForm);

@@ -40,10 +40,13 @@ body {
     rgb(7, 245, 58) 100%
   );
 }
-.conatct{
-  padding-left: 20px;
+.contact{
+  margin-top: 20px;
+  padding: 20px;
   border-radius: 8px;
 }
+
+
 .input{
   margin-bottom: 1rem;
   width: 10rem;

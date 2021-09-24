@@ -1,15 +1,8 @@
-import { ADD_CONTACT, DELETE_CONTACT, EDIT_CONTACT } from "../Action/ContactsActions";
+import { ADD_CONTACT, DELETE_CONTACT, EDIT_CONTACT, SET_ALL_CONTACTS } from "../Action/ContactsActions";
 
 
-const initialState={
-    contacts: [
-        {
-          Name: "James",
-          Phone: "0244945255",
-          Location: "Accra",
-          id: "5367r8trgnjb",
-        },
-      ]
+const initialState= {
+    contacts: [ ]
 };
 
 const ContactsReducer=(state=initialState, action)=>{
@@ -28,7 +21,10 @@ const ContactsReducer=(state=initialState, action)=>{
                   return{
                    ...state, contacts: state.contacts.map((contact)=>
                     contact.id === action.payload.id ? action.payload : contact
-                    )}
+                    )};
+                  case SET_ALL_CONTACTS:
+                    return{...state, contacts: action.payload}
+
             default:
                 return state
         }
