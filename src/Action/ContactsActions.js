@@ -21,28 +21,43 @@ export const addContact = (contact)=>{
     // }
 };
 export const deleteContact = (contactId)=>{
-    return{
-        type: DELETE_CONTACT,
-        payload: contactId
-    }
+
+        return(dispatch, state, {getFirestore})=>{
+            getFirestore().collection('contacts')
+            .doc(contactId).delete().then(()=>{})
+        }
+
+
+    // return{
+    //     type: DELETE_CONTACT,
+    //     payload: contactId
+    // }
 };
 
 export const editContact = (updateContact)=>{
-    return{
-        type: EDIT_CONTACT,
-        payload: updateContact
-    }
+        return(dispatch, state, {getFirestore})=>{
+            getFirestore().collection('contacts')
+            .doc(updateContact.id).set(updateContact)
+            .then(()=>{})
+        }
+
+
+    // return{
+    //     type: EDIT_CONTACT,
+    //     payload: updateContact
+    // }
 };
 
 export const getAllContacts = ()=>{
     return(dispatch, state, {getFirestore})=>{
         getFirestore()
         .collection('contacts')
+        .orderBy("Name",)
         .onSnapshot(
             (snapshot)=>{
                 let contacts = [];
                 snapshot.forEach((doc)=>{
-                    contacts.push(doc.data())
+                    contacts.push({...doc.data(), id:doc.id})
                 });
                 dispatch({
                     type: SET_ALL_CONTACTS,
