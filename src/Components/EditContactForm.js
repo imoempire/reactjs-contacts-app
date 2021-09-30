@@ -23,7 +23,7 @@ class EditContactForm extends Component {
         this.props.editContact(this.state);
         this.setState({
             Name: "",
-            Phone: "",
+            Phone: "", 
             Location: "",
         });
         this.props.closeModal();
