@@ -16,7 +16,7 @@ const Register = (props) => {
   return (
     <div>
       <h1>Register Now</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="logs">
         <div>
           <label htmlFor="email">Email</label>
           <input type="email" name="email" placeholder="email" />
