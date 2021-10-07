@@ -5,7 +5,7 @@ const initialState= {
     contacts: [ ]
 };
 
-const ContactsReducer=(state=initialState, action)=>{
+const contactsReducer=(state=initialState, action)=>{
         switch (action.type) {
             case ADD_CONTACT:
 
@@ -29,4 +29,4 @@ const ContactsReducer=(state=initialState, action)=>{
                 return state
         }
 }
-export default ContactsReducer;
+export default contactsReducer;
