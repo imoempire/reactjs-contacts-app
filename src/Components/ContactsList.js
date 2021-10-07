@@ -22,7 +22,7 @@ function ContactsList( {contacts, deleteContact, editContact} ) {
 
 const mapStateToProps=(state)=>{
     return {
-        contacts: state.contacts
+        contacts: state.contact.contacts
     }
 }
 export default connect(mapStateToProps)(ContactsList)

@@ -1,12 +1,16 @@
-import { applyMiddleware, compose, createStore } from 'redux';
-import { getFirebase, reactReduxFirebase } from 'react-redux-firebase';
+import { applyMiddleware, compose, createStore, combineReducers } from 'redux';
+import { getFirebase, reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
 import { getFirestore, reduxFirestore } from 'redux-firestore';
 import contactsReducer from '../Reducer/contactsReducer';
 import thunk from 'redux-thunk';
 import firebase from '../firebase/Config';
-import { firestore } from 'firebase';
 
-const store=createStore(contactsReducer, compose(
+let reducers= combineReducers({
+    contact: contactsReducer,
+    firebase: firebaseReducer,
+})
+
+const store=createStore(reducers, compose(
     applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
     reactReduxFirebase(firebase),
     reduxFirestore(firebase)

@@ -4,19 +4,10 @@
 }
 
 body {
-  /* background: linear-gradient(
-    90deg,
-    rgb(5, 30, 114) 0%,
-    rgb(19, 29, 1) 100%
-  ); */
   background: url('./image/573563.jpg');
   margin: 10%;
 }
-/* form{
-  text-align: center;
-  border: 1px solid black;
-  
-} */
+
 .contact:nth-child(2n + 1) {
   background: linear-gradient(
     70deg,
@@ -47,9 +38,9 @@ body {
 }
 
 
-.input{
+input{
   margin-bottom: 1rem;
-  width: 10rem;
+  width: 100%;
 }
 
 h1 {
@@ -59,3 +50,16 @@ h1 {
   padding: 20px;
   font-size: 1.8em;
   border-radius: 5px;}
+
+  .logs input{
+    width: 50%;
+  }
+
+  .logs {
+    margin: 80px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 3em 5em -0.25em rgb(10 10 10 / 50%);
+  }
