@@ -47,9 +47,9 @@ body {
 }
 
 
-.input{
+input{
   margin-bottom: 1rem;
-  width: 10rem;
+  width: 100%;
 }
 
 h1 {
